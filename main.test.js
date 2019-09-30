@@ -1,9 +1,71 @@
 const {
+  iGetTheJoke,
+  havingFun,
+  learning,
+  killingIt,
+  isOpposite,
+  returnFalse,
   both,
   either,
   neither,
-  itsComplicated
+  itsComplicated,
 } = require('./main')
+
+describe('iGetTheJoke', () => {
+  it('is a boolean', () => {
+    expect(typeof iGetTheJoke).toBe('boolean')
+  })
+})
+
+describe('havingFun', () => {
+  it('is a boolean', () => {
+    expect(typeof havingFun).toBe('boolean')
+  })
+})
+
+describe('learning', () => {
+  it('is a boolean', () => {
+    expect(typeof learning).toBe('boolean')
+  })
+})
+
+describe('killingIt', () => {
+  it('is a boolean', () => {
+    expect(typeof killingIt).toBe('boolean')
+  })
+
+  it('is `true` if and only if both `learning` and `havingFun` are `true`', () => {
+    expect(killingIt).toBe(learning && havingFun)
+  })
+})
+
+describe('returnFalse', () => {
+  it('is a function', () => {
+    expect(typeof returnFalse).toBe('function')
+  })
+
+  it('returns false no matter the parameters given', () => {
+    expect(returnFalse()).toBe(false);
+    expect(returnFalse(true)).toBe(false);
+    expect(returnFalse(false)).toBe(false);
+    expect(returnFalse(1)).toBe(false);
+    expect(returnFalse(3, 'hi')).toBe(false);
+  })
+})
+
+describe('isOpposite', () => {
+  it('is a function', () => {
+    expect(typeof isOpposite).toBe('function')
+  })
+
+  it('given a `true`, returns `false`', () => {
+    expect(isOpposite(true)).toBe(false)
+  })
+
+  it('given a `false`, returns `true`', () => {
+    expect(isOpposite(false)).toBe(true)
+  })
+})
 
 describe('both', () => {
   it('is a function', () => {
